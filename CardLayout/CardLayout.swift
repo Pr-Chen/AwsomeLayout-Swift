@@ -10,11 +10,35 @@ import UIKit
 
 class CardLayout: UICollectionViewLayout {
 
-    var itemSize: CGSize = CGSize(width: 280, height: 400)
-    var spacing: CGFloat = 10.0
-    var scale: CGFloat = 1.0
-    var edgeInset: UIEdgeInsets = UIEdgeInsetsMake(20, 20, 20, 20)
-    var scrollDirection: UICollectionViewScrollDirection = .horizontal
+    var itemSize: CGSize = CGSize(width: 280, height: 400) {
+        didSet {
+            invalidateLayout()
+        }
+    }
+    
+    var spacing: CGFloat = 20.0 {
+        didSet {
+            invalidateLayout()
+        }
+    }
+    
+    var scale: CGFloat = 1.0 {
+        didSet {
+            invalidateLayout()
+        }
+    }
+    
+    var edgeInset: UIEdgeInsets = UIEdgeInsetsMake(20, 20, 20, 20) {
+        didSet {
+            invalidateLayout()
+        }
+    }
+    
+    var scrollDirection: UICollectionViewScrollDirection = .horizontal {
+        didSet {
+            invalidateLayout()
+        }
+    }
     
     private var rectAttributes:[UICollectionViewLayoutAttributes] = [];
     
@@ -58,8 +82,8 @@ class CardLayout: UICollectionViewLayout {
             y = 0.5*(collectionView.bounds.height - itemSize.height)
             
         case .vertical:
-            x = edgeInset.left + CGFloat(indexPath.item)*(itemSize.width+spacing)
-            y = 0.5*(collectionView.bounds.width - itemSize.width)
+            x = 0.5*(collectionView.bounds.width - itemSize.width)
+            y = edgeInset.top + CGFloat(indexPath.item)*(itemSize.height+spacing)
         }
         attribute.frame = CGRect(origin: CGPoint(x:x, y:y), size: itemSize)
         return attribute
@@ -80,8 +104,11 @@ class CardLayout: UICollectionViewLayout {
             for attribute in attributes {
                 offset = abs(attribute.center.x - centerX)
                 deno = itemSize.width+spacing
-                scale = offset<deno ? 1+(1-offset/deno)*(self.scale-1) : 1
-                attribute.transform = CGAffineTransform(scaleX: scale, y: scale)
+                if offset<deno {
+                    scale = 1+(1-offset/deno)*(self.scale-1)
+                    attribute.transform = CGAffineTransform(scaleX: scale, y: scale)
+                    attribute.zIndex = 1
+                }
             }
             
         case .vertical:
@@ -89,8 +116,11 @@ class CardLayout: UICollectionViewLayout {
             for attribute in attributes {
                 offset = abs(attribute.center.y - centerY)
                 deno = itemSize.height+spacing
-                scale = offset<deno ? 1+(1-offset/deno)*(self.scale-1) : 1
-                attribute.transform = CGAffineTransform(scaleX: scale, y: scale)
+                if offset<deno {
+                    scale = 1+(1-offset/deno)*(self.scale-1)
+                    attribute.transform = CGAffineTransform(scaleX: scale, y: scale)
+                    attribute.zIndex = 1
+                }
             }
         }
         return attributes
@@ -107,27 +137,28 @@ class CardLayout: UICollectionViewLayout {
             return proposedContentOffset
         }
         
-        var minOffset = CGFloat(Int.max)
         switch scrollDirection {
         case .horizontal:
-            let centerX = collectionView.contentOffset.x+0.5*collectionView.bounds.width
+            let centerX = proposedContentOffset.x+0.5*collectionView.bounds.width
+            var minOffsetX = CGFloat(Int.max)
             for attribute in attributes {
                 let offsetX = attribute.center.x-centerX
-                if abs(offsetX)<abs(minOffset) {
-                    minOffset = offsetX
+                if abs(offsetX)<abs(minOffsetX) {
+                    minOffsetX = offsetX
                 }
             }
-            return CGPoint(x:proposedContentOffset.x+minOffset, y:proposedContentOffset.y)
+            return CGPoint(x:proposedContentOffset.x+minOffsetX, y:proposedContentOffset.y)
             
         case .vertical:
-            let centerY = collectionView.contentOffset.y+0.5*collectionView.bounds.height
+            let centerY = proposedContentOffset.y+0.5*collectionView.bounds.height
+            var minOffsetY = CGFloat(Int.max)
             for attribute in attributes {
                 let offsetY = attribute.center.y-centerY
-                if abs(offsetY)<abs(minOffset) {
-                    minOffset = offsetY
+                if abs(offsetY)<abs(minOffsetY) {
+                    minOffsetY = offsetY
                 }
             }
-            return CGPoint(x:proposedContentOffset.x, y:proposedContentOffset.y+minOffset)
+            return CGPoint(x:proposedContentOffset.x, y:proposedContentOffset.y+minOffsetY)
         }
     }
     
@@ -149,6 +180,7 @@ class CardLayout: UICollectionViewLayout {
             latIndex = Int((rect.maxY-edgeInset.top)/(itemSize.height+spacing))
         }
         preIndex = preIndex<0 ? 0 : preIndex
+        preIndex = preIndex>=itemCount ? itemCount-1 : preIndex
         latIndex = latIndex>=itemCount ? itemCount-1 : latIndex
         
         rectAttributes.removeAll()
