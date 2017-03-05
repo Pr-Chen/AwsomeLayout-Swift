@@ -11,32 +11,43 @@ import UIKit
 class CardLayout: UICollectionViewLayout {
 
     var itemSize: CGSize = CGSize(width: 280, height: 400) {
+        
         didSet {
-            invalidateLayout()
+            if itemSize != oldValue {
+                invalidateLayout()
+            }
         }
     }
     
     var spacing: CGFloat = 20.0 {
         didSet {
-            invalidateLayout()
+            if spacing != oldValue {
+                invalidateLayout()
+            }
         }
     }
     
     var scale: CGFloat = 1.0 {
         didSet {
-            invalidateLayout()
+            if scale != oldValue {
+                invalidateLayout()
+            }
         }
     }
     
     var edgeInset: UIEdgeInsets = UIEdgeInsetsMake(20, 20, 20, 20) {
         didSet {
-            invalidateLayout()
+            if edgeInset != oldValue {
+                invalidateLayout()
+            }
         }
     }
     
     var scrollDirection: UICollectionViewScrollDirection = .horizontal {
         didSet {
-            invalidateLayout()
+            if scrollDirection != oldValue {
+                invalidateLayout()
+            }
         }
     }
     
