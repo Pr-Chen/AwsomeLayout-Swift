@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		743C4F6A1E67CEF3000A7E8F /* CardLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		743C4F6A1E67CEF3000A7E8F /* AwsomeLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwsomeLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		743C4F6D1E67CEF3000A7E8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		743C4F6F1E67CEF3000A7E8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		743C4F721E67CEF3000A7E8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,7 +40,7 @@
 		743C4F611E67CEF3000A7E8F = {
 			isa = PBXGroup;
 			children = (
-				743C4F6C1E67CEF3000A7E8F /* CardLayout */,
+				743C4F6C1E67CEF3000A7E8F /* AwsomeLayout */,
 				743C4F6B1E67CEF3000A7E8F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,31 +48,31 @@
 		743C4F6B1E67CEF3000A7E8F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				743C4F6A1E67CEF3000A7E8F /* CardLayout.app */,
+				743C4F6A1E67CEF3000A7E8F /* AwsomeLayout.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		743C4F6C1E67CEF3000A7E8F /* CardLayout */ = {
+		743C4F6C1E67CEF3000A7E8F /* AwsomeLayout */ = {
 			isa = PBXGroup;
 			children = (
+				743C4F7F1E67CF1F000A7E8F /* CardLayout.swift */,
 				743C4F6D1E67CEF3000A7E8F /* AppDelegate.swift */,
 				743C4F6F1E67CEF3000A7E8F /* ViewController.swift */,
 				743C4F711E67CEF3000A7E8F /* Main.storyboard */,
 				743C4F741E67CEF3000A7E8F /* Assets.xcassets */,
 				743C4F761E67CEF3000A7E8F /* LaunchScreen.storyboard */,
 				743C4F791E67CEF3000A7E8F /* Info.plist */,
-				743C4F7F1E67CF1F000A7E8F /* CardLayout.swift */,
 			);
-			path = CardLayout;
+			path = AwsomeLayout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		743C4F691E67CEF3000A7E8F /* CardLayout */ = {
+		743C4F691E67CEF3000A7E8F /* AwsomeLayout */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 743C4F7C1E67CEF3000A7E8F /* Build configuration list for PBXNativeTarget "CardLayout" */;
+			buildConfigurationList = 743C4F7C1E67CEF3000A7E8F /* Build configuration list for PBXNativeTarget "AwsomeLayout" */;
 			buildPhases = (
 				743C4F661E67CEF3000A7E8F /* Sources */,
 				743C4F671E67CEF3000A7E8F /* Frameworks */,
@@ -82,9 +82,9 @@
 			);
 			dependencies = (
 			);
-			name = CardLayout;
+			name = AwsomeLayout;
 			productName = CardLayout;
-			productReference = 743C4F6A1E67CEF3000A7E8F /* CardLayout.app */;
+			productReference = 743C4F6A1E67CEF3000A7E8F /* AwsomeLayout.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -104,7 +104,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 743C4F651E67CEF3000A7E8F /* Build configuration list for PBXProject "CardLayout" */;
+			buildConfigurationList = 743C4F651E67CEF3000A7E8F /* Build configuration list for PBXProject "AwsomeLayout" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -117,7 +117,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				743C4F691E67CEF3000A7E8F /* CardLayout */,
+				743C4F691E67CEF3000A7E8F /* AwsomeLayout */,
 			);
 		};
 /* End PBXProject section */
@@ -268,7 +268,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6QEB559EPD;
-				INFOPLIST_FILE = CardLayout/Info.plist;
+				INFOPLIST_FILE = AwsomeLayout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MrChen.CardLayout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -281,7 +281,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6QEB559EPD;
-				INFOPLIST_FILE = CardLayout/Info.plist;
+				INFOPLIST_FILE = AwsomeLayout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MrChen.CardLayout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -292,7 +292,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		743C4F651E67CEF3000A7E8F /* Build configuration list for PBXProject "CardLayout" */ = {
+		743C4F651E67CEF3000A7E8F /* Build configuration list for PBXProject "AwsomeLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				743C4F7A1E67CEF3000A7E8F /* Debug */,
@@ -301,7 +301,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		743C4F7C1E67CEF3000A7E8F /* Build configuration list for PBXNativeTarget "CardLayout" */ = {
+		743C4F7C1E67CEF3000A7E8F /* Build configuration list for PBXNativeTarget "AwsomeLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				743C4F7D1E67CEF3000A7E8F /* Debug */,
