@@ -37,6 +37,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7417B55A1E7597B400BDC7F7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				743C4F6F1E67CEF3000A7E8F /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7417B55B1E7597B400BDC7F7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7417B55C1E7597B400BDC7F7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7417B55D1E7597B400BDC7F7 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				743C4F7F1E67CF1F000A7E8F /* CardLayout.swift */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
+		7417B55E1E75980E00BDC7F7 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				743C4F711E67CEF3000A7E8F /* Main.storyboard */,
+				743C4F741E67CEF3000A7E8F /* Assets.xcassets */,
+				743C4F761E67CEF3000A7E8F /* LaunchScreen.storyboard */,
+				743C4F791E67CEF3000A7E8F /* Info.plist */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
+		7417B55F1E75983C00BDC7F7 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				743C4F6D1E67CEF3000A7E8F /* AppDelegate.swift */,
+				7417B55A1E7597B400BDC7F7 /* Controller */,
+				7417B55B1E7597B400BDC7F7 /* View */,
+				7417B55C1E7597B400BDC7F7 /* Model */,
+			);
+			name = Demo;
+			sourceTree = "<group>";
+		};
 		743C4F611E67CEF3000A7E8F = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +108,9 @@
 		743C4F6C1E67CEF3000A7E8F /* AwsomeLayout */ = {
 			isa = PBXGroup;
 			children = (
-				743C4F7F1E67CF1F000A7E8F /* CardLayout.swift */,
-				743C4F6D1E67CEF3000A7E8F /* AppDelegate.swift */,
-				743C4F6F1E67CEF3000A7E8F /* ViewController.swift */,
-				743C4F711E67CEF3000A7E8F /* Main.storyboard */,
-				743C4F741E67CEF3000A7E8F /* Assets.xcassets */,
-				743C4F761E67CEF3000A7E8F /* LaunchScreen.storyboard */,
-				743C4F791E67CEF3000A7E8F /* Info.plist */,
+				7417B55F1E75983C00BDC7F7 /* Demo */,
+				7417B55D1E7597B400BDC7F7 /* Layouts */,
+				7417B55E1E75980E00BDC7F7 /* Support */,
 			);
 			path = AwsomeLayout;
 			sourceTree = "<group>";
